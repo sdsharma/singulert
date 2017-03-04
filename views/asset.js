@@ -82,9 +82,20 @@ $(document).ready(function(){
 				    });
 		      		$(".back").empty();
 					$(".circle").flip(true);
-					console.log("hi");
-					$(".back").append("<div class='container'><p id='epic'>Link your Epic account</p><div><button type='button' class='btn btn-success Epic'>Link</button></div></div>");	      	
-		      	}
+					$(".back").append("<div class='container'><p id='epic'>Link your Epic account</p><div><button type='button' class='btn btn-success Epic' id='epicbtn'>Link</button></div></div>");
+					$("#epicbtn").click(function(){
+						$.ajax({
+					      type: "POST",
+					      url: 'http://localhost:3000/api/alert/userprofile',
+					      data: {
+					      	username: Cookies.get('userName')
+					      },
+					      success: function(data){
+					      	Cookies.set('userData', JSON.stringify(data));
+					      }
+					    });
+					});	      	
+		      	}	
 		      	else{
 					$("#signupError").show();
 		      		$("#signupError").fadeOut(3000);
