@@ -58,7 +58,8 @@ $(document).ready(function(){
 	$(".Signup").click(function(){
 		$(".front").empty();
 		$(".circle").flip(false);
-		$(".front").append("<div id='circleForm'><p id='signup'>Sign up</p><div class='fields'><div class='group'><input id='unameField' type='text' required><span class='highlight'></span><span class='bar'></span><label>Username</label></div><div class='group'><input id='pwField' type='password' required><span class='highlight'></span><span class='bar'></span><label>Password</label></div></div><button id='signupbtn'>Join</button></div>");
+		$(".front").append("<div id='circleForm'><p id='signup'>Sign up</p><div id='signupError' class='alert alert-danger error'><strong>Please use a User Name that has not been used.</strong></div><div class='fields'><div class='group'><input id='unameField' type='text' required><span class='highlight'></span><span class='bar'></span><label>Username</label></div><div class='group'><input id='pwField' type='password' required><span class='highlight'></span><span class='bar'></span><label>Password</label></div></div><button id='signupbtn'>Join</button></div>");
+		$("#signupError").hide();
 		$("#signupbtn").click(function(){
 			$.ajax({
 		      type: "POST",
@@ -78,7 +79,8 @@ $(document).ready(function(){
 				    });		      	
 		      	}
 		      	else{
-
+					$("#signupError").show();
+		      		$("#signupError").fadeOut(3000);
 		      	}
 		      }
 		    });
