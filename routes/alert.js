@@ -67,8 +67,8 @@ routes.push({
                     else{
                         reply(true);
                     }
-                });
-                db.close();
+                    db.close();
+                }); 
             });
         },
         tags: ['api'],
