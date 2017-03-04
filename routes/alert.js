@@ -87,14 +87,14 @@ routes.push({
         auth: false,
         handler: function (request, reply) {
             MongoClient.connect(dburl, function(err, db) {
-            var collection = db.collection('users');
-            collection.insert({username: request.payload.username, score: request.payload.password});
-            db.createCollection(request.payload.username, function(err, collection){
-               if (err) throw err;
-                console.log("Created Collection: " + request.payload.username);
-            });
-
-              db.close();
+                var collection = db.collection('users');
+                collection.insert({username: request.payload.username, score: request.payload.password});
+                db.createCollection(request.payload.username, function(err, collection){
+                   if (err) throw err;
+                    console.log("Created Collection: " + request.payload.username);
+                    db.close();
+                });
+               
             });
         },
         tags: ['api'],
