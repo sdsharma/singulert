@@ -1,0 +1,25 @@
+# Generic repo config
+logs
+*.log
+pids
+*.pid
+node_modules
+*.csv
+*.dat
+*.out
+*.gz
+npm-debug.log
+node_modules
+.DS_STORE
+.build
+.idea/
+coverage
+.npmrc
+
+
+# Compiled output
+dist
+test-results.xml
+
+# Encryption config
+encryption-config.js
