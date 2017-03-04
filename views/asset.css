@@ -244,7 +244,23 @@ button {
   margin-left: 115px;
 }
 
+#signup{
+  position: absolute;
+  font-weight: bold;
+  font-size: 40px;
+  padding-bottom: 30px;
+  z-index: 100;
+  margin-top: -70px;
+  margin-left: 110px;
+}
+
 #loginbtn{
+  position: absolute;
+  margin-top: 220px;
+  margin-left: 74px;
+}
+
+#signupbtn{
   position: absolute;
   margin-top: 220px;
   margin-left: 74px;

@@ -42,14 +42,20 @@ $(document).ready(function(){
 	      data: {
 	      	username: $("#unameField").val(),
 	      	password: $("#pwField").val()
-	      }
+	      },
 	      success: function(){
-
+	      	return true;
 	      },
 	      error: function(){
-	      	
+	      	return false;
 	      }
 	    });
+	});
+
+	$(".Signup").click(function(){
+		$(".front").empty();
+		$(".circle").flip(false);
+		$(".front").append("<div id='circleForm'><p id='signup'>Sign up</p><div class='fields'><div class='group'><input id='unameField' type='text' required><span class='highlight'></span><span class='bar'></span><label>Username</label></div><div class='group'><input id='pwField' type='password' required><span class='highlight'></span><span class='bar'></span><label>Password</label></div></div><button id='signupbtn'>Join</button></div>");
 	});
 
 	
