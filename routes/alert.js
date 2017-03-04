@@ -60,8 +60,8 @@ routes.push({
         auth: false,
         handler: function (request, reply) {
             MongoClient.connect(dburl, function(err, db) {
-                db.collectionNames(request.payload.username, function(err, names) {
-                    if(names.length > 0){
+                db.listCollections({name: request.payload.username}).toArray(function(err, items) {
+                    if(items.length > 0){
                         reply(false);
                     }
                     else{
