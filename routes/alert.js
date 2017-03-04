@@ -52,10 +52,9 @@ routes.push({
     }
 });
 
-
 routes.push({
     method: 'POST',
-    path: API_BASE_PATH + '/createuser',
+    path: API_BASE_PATH + '/checkuser',
     config: {
         auth: false,
         handler: function (request, reply) {
@@ -64,10 +63,7 @@ routes.push({
                 reply(false);
               }
               else{
-                db.createCollection(request.payload.username, function(err, collection){
-                   if (err) throw err;
-                    console.log("Created Collection: " + request.payload.username);
-                });
+                reply(true);
               }
               db.close();
             });
@@ -76,6 +72,62 @@ routes.push({
         validate: {
             params: {
               username: Joi.string().required()
+            }
+        }
+    }
+});
+
+routes.push({
+    method: 'POST',
+    path: API_BASE_PATH + '/createuser',
+    config: {
+        auth: false,
+        handler: function (request, reply) {
+            MongoClient.connect(dburl, function(err, db) {
+            var collection = db.collection('users');
+            collection.insert({username: request.payload.username, score: request.payload.password});
+            db.createCollection(request.payload.username, function(err, collection){
+               if (err) throw err;
+                console.log("Created Collection: " + request.payload.username);
+            });
+
+              db.close();
+            });
+        },
+        tags: ['api'],
+        validate: {
+            params: {
+              username: Joi.string().required(),
+              password: Joi.string().required()
+            }
+        }
+    }
+});
+
+routes.push({
+    method: 'POST',
+    path: API_BASE_PATH + '/login',
+    config: {
+        auth: false,
+        handler: function (request, reply) {
+            MongoClient.connect(dburl, function(err, db) {
+            var collection = db.collection('users');
+            var userData = collection.findOne({username: request.payload.username});
+            if(request.payload.password == userData.password){
+                reply(true);
+            }
+            else{
+                reply(false);
+            }
+
+              db.close();
+            });
+        },
+        tags: ['api'],
+        validate: {
+            params: {
+              username: Joi.string().required(),
+              password: Joi.string().required()
             }
         }
     }
