@@ -265,3 +265,10 @@ button {
   margin-top: 220px;
   margin-left: 74px;
 }
+
+.error{
+    position: fixed;
+    z-index: 1;
+    top: 50vh;
+    left: 5vw;
+}

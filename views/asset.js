@@ -32,7 +32,8 @@ $(document).ready(function(){
 	$(".Login").click(function(){
 		$(".front").empty();
 		$(".circle").flip(false);
-		$(".front").append("<div id='circleForm'><p id='login'>Login</p><div class='fields'><div class='group'><input id='unameField' type='text' required><span class='highlight'></span><span class='bar'></span><label>Username</label></div><div class='group'><input id='pwField' type='password' required><span class='highlight'></span><span class='bar'></span><label>Password</label></div></div><button id='loginbtn'>Login</button></div>");
+		$(".front").append("<div id='circleForm'><p id='login'>Login</p><div id='loginError' class='alert alert-danger error'><strong>Please try again with correct username and password</strong></div><div class='fields'><div class='group'><input id='unameField' type='text' required><span class='highlight'></span><span class='bar'></span><label>Username</label></div><div class='group'><input id='pwField' type='password' required><span class='highlight'></span><span class='bar'></span><label>Password</label></div></div><button id='loginbtn'>Login</button></div>");
+		$("#loginError").hide();
 		$("#loginbtn").click(function(){
 			$.ajax({
 		      type: "POST",
@@ -44,7 +45,8 @@ $(document).ready(function(){
 		      success: function(data){
 		      	console.log(data);
 		      	if(data == false){
-		      				      	
+		      		$("#loginError").show();
+		      		$("#loginError").fadeOut(3000);
 		      	}
 		      }
 		    });
