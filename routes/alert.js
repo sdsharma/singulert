@@ -3,6 +3,7 @@
 const Joi = require('joi');
 var MongoClient = require('mongodb').MongoClient
   , assert = require('assert');
+const rp = require('request-promise')
 var dburl = 'mongodb://localhost:27017/singulert';
 
 const API_BASE_PATH = '/api/alert';
@@ -70,7 +71,7 @@ routes.push({
         },
         tags: ['api'],
         validate: {
-            params: {
+            payload: {
               username: Joi.string().required()
             }
         }
@@ -96,7 +97,7 @@ routes.push({
         },
         tags: ['api'],
         validate: {
-            params: {
+            payload: {
               username: Joi.string().required(),
               password: Joi.string().required()
             }
@@ -125,7 +126,7 @@ routes.push({
         },
         tags: ['api'],
         validate: {
-            params: {
+            payload: {
               username: Joi.string().required(),
               password: Joi.string().required()
             }
@@ -135,21 +136,31 @@ routes.push({
 
 routes.push({
     method: 'POST',
-    path: API_BASE_PATH + '/userscore',
+    path: API_BASE_PATH + '/userprofile',
     config: {
         auth: false,
         handler: function (request, reply) {
             MongoClient.connect(dburl, function(err, db) {
-              var collection = db.collection(request.payload.username);
-              collection.insert({date: new Date(), score: request.payload.score});
-              db.close();
+              var collection = db.collection('userdata');
+              var url = "https://open-ic.epic.com/FHIR/api/FHIR/DSTU2/Patient/Tuh-qbjlmtLPCn20yjzYj8qKGeIRWOipYwfdBc9b3U3AB";
+              var options = {
+                uri: url,
+                json: true
+              }
+              return rp(options).then(
+                function(data){
+                    data.username = request.payload.username;
+                    collection.insert(data);
+                    db.close();
+                    reply(data);
+                }
+              );
             });
         },
         tags: ['api'],
         validate: {
-            params: {
-              username: Joi.string().required(),
-              score: Joi.number().integer().required()
+            payload: {
+              username: Joi.string().required()
             }
         }
     }
