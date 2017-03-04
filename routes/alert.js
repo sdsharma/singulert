@@ -60,13 +60,15 @@ routes.push({
         auth: false,
         handler: function (request, reply) {
             MongoClient.connect(dburl, function(err, db) {
-              if(db.getCollection(request.payload.username).exists()){
-                reply(false);
-              }
-              else{
-                reply(true);
-              }
-              db.close();
+                db.collectionNames(request.payload.username, function(err, names) {
+                    if(names.length > 0){
+                        reply(false);
+                    }
+                    else{
+                        reply(true);
+                    }
+                });
+                db.close();
             });
         },
         tags: ['api'],
