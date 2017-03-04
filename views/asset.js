@@ -33,23 +33,25 @@ $(document).ready(function(){
 		$(".front").empty();
 		$(".circle").flip(false);
 		$(".front").append("<div id='circleForm'><p id='login'>Login</p><div class='fields'><div class='group'><input id='unameField' type='text' required><span class='highlight'></span><span class='bar'></span><label>Username</label></div><div class='group'><input id='pwField' type='password' required><span class='highlight'></span><span class='bar'></span><label>Password</label></div></div><button id='loginbtn'>Login</button></div>");
+		$("#loginbtn").click(function(){
+			$.ajax({
+		      type: "POST",
+		      url: 'http://localhost:3000/api/alert/login',
+		      data: {
+		      	username: $("#unameField").val(),
+		      	password: $("#pwField").val()
+		      },
+		      success: function(data){
+		      	console.log(data);
+		      	if(data == false){
+		      				      	
+		      	}
+		      }
+		    });
+		});		
 	});
 
-	$("#loginbtn").click(function(){
-		$.ajax({
-	      type: "POST",
-	      url: 'http://localhost:3000/api/alert/login',
-	      data: {
-	      	username: $("#unameField").val(),
-	      	password: $("#pwField").val()
-	      },
-	      success: function(data){
-	      	if(data == false){
-	      		
-	      	}
-	      }
-	    });
-	});
+
 
 	$(".Signup").click(function(){
 		$(".front").empty();
