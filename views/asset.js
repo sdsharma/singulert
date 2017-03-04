@@ -79,7 +79,11 @@ $(document).ready(function(){
 				      	username: $("#unameField").val(),
 				      	password: $("#pwField").val()
 				      }
-				    });		      	
+				    });
+		      		$(".back").empty();
+					$(".circle").flip(true);
+					console.log("hi");
+					$(".back").append("<div class='container'><p id='epic'>Link your Epic account</p><div><button type='button' class='btn btn-success Epic'>Link</button></div></div>");	      	
 		      	}
 		      	else{
 					$("#signupError").show();
