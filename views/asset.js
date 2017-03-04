@@ -43,11 +43,10 @@ $(document).ready(function(){
 	      	username: $("#unameField").val(),
 	      	password: $("#pwField").val()
 	      },
-	      success: function(){
-	      	return true;
-	      },
-	      error: function(){
-	      	return false;
+	      success: function(data){
+	      	if(data == false){
+	      		
+	      	}
 	      }
 	    });
 	});
