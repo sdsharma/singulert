@@ -8,8 +8,7 @@ $(document).ready(function(){
 	});
 
 	$("#nextBtn").click(function(){
-	    if( $("#nameField").val().length > 0){
-	    	Cookies.set('userName', $("#nameField").val());
+	    if( $("#nameField").val().length > 0){	    	
 	    	$(".front").empty();
 	    	$(".circle").flip(false);
 	    }
@@ -42,11 +41,14 @@ $(document).ready(function(){
 		      	username: $("#unameField").val(),
 		      	password: $("#pwField").val()
 		      },
-		      success: function(data){
-		      	console.log(data);
+		      success: function(data){		      			      	
 		      	if(data == false){
 		      		$("#loginError").show();
 		      		$("#loginError").fadeOut(3000);
+
+		      	}
+		      	else{
+		      		Cookies.set('userName', $("#unameField").val());		      		
 		      	}
 		      }
 		    });
@@ -69,6 +71,7 @@ $(document).ready(function(){
 		      },
 		      success: function(data){
 		      	if(data == true){
+		      		Cookies.set('userName', $("#unameField").val());		      		
 		      		$.ajax({
 				      type: "POST",
 				      url: 'http://localhost:3000/api/alert/createuser',
