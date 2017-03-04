@@ -57,6 +57,30 @@ $(document).ready(function(){
 		$(".front").empty();
 		$(".circle").flip(false);
 		$(".front").append("<div id='circleForm'><p id='signup'>Sign up</p><div class='fields'><div class='group'><input id='unameField' type='text' required><span class='highlight'></span><span class='bar'></span><label>Username</label></div><div class='group'><input id='pwField' type='password' required><span class='highlight'></span><span class='bar'></span><label>Password</label></div></div><button id='signupbtn'>Join</button></div>");
+		$("#signupbtn").click(function(){
+			$.ajax({
+		      type: "POST",
+		      url: 'http://localhost:3000/api/alert/checkuser',
+		      data: {
+		      	username: $("#unameField").val()
+		      },
+		      success: function(data){
+		      	if(data == true){
+		      		$.ajax({
+				      type: "POST",
+				      url: 'http://localhost:3000/api/alert/createuser',
+				      data: {
+				      	username: $("#unameField").val(),
+				      	password: $("#pwField").val()
+				      }
+				    });		      	
+		      	}
+		      	else{
+
+		      	}
+		      }
+		    });
+		});	
 	});
 
 	
