@@ -4,8 +4,38 @@
 	left: 0;
 	top: 0;
 	height: 100vh;
+	box-shadow: 0 4px 12px 0 rgba(0,0,0,0.5);
 }
 .logo{
 	width: 105.5%;
 	margin
+}
+
+body{
+	font-family: 'Lato', sans-serif;
+}
+
+.welcome-text{
+	color: #fff;
+	font-size: .8em;
+	text-align: center;
+	font-style: italic;
+	position: absolute;
+    bottom: 0;
+}
+
+.user-image{
+	text-align: center;
+	max-height: 150px;
+	position: absolute;
+	top: 20vh;
+	left: 6.5vw;
+	border: 1px solid #fff;
+}
+
+.user-info{
+	position: relative;
+	top: 35vh;
+	color: #fff;
+	text-align: center;
 }
