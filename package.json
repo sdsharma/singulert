@@ -1,5 +1,5 @@
 {
-  "name": "singularity-diabetes",
+  "name": "singulert",
   "version": "1.0.0",
   "description": "API for Singularity",
   "main": "app.js",
@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sdsharma/singularity-diabetes.git"
+    "url": "git+https://github.com/sdsharma/singulert.git"
   },
   "keywords": [
     "hapi"
   ],
   "author": "Shivam Sharma",
-  "homepage": "https://github.com/sdsharma/singularity-diabetes",
+  "homepage": "https://github.com/sdsharma/singulert",
   "dependencies": {
     "hapi": "^14.1.0",
     "hapi-swagger": "^6.2.1",
