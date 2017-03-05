@@ -11,6 +11,7 @@
 	margin
 }
 
+
 body{
 	font-family: 'Lato', sans-serif;
 }
@@ -38,4 +39,17 @@ body{
 	top: 35vh;
 	color: #fff;
 	text-align: center;
+
+}
+
+#myChart{
+	margin-left: 400px;
+}
+
+#stabilityText{
+	margin-top: 50px;
+    margin-left: 450px;
+    font-size: 35px;
+    font-weight: bold;
+
 }
