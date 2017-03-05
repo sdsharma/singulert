@@ -40,6 +40,7 @@ $(document).ready(function(){
 		      			url: 'http://localhost:3000/api/alert/userdata/' + Cookies.get('userName'),
 		      			success: function(userdata){
 		      				Cookies.set('userData', JSON.stringify(userdata));
+		      				document.location.href = 'userprofile.html';
 		      			} 
 		      		});		      		
 		      	}
@@ -85,6 +86,7 @@ $(document).ready(function(){
 					      },
 					      success: function(data){
 					      	Cookies.set('userData', JSON.stringify(data));
+					      	document.location.href = 'userprofile.html';
 					      }
 					    });
 					});	      	
