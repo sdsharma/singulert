@@ -152,3 +152,41 @@
 		$('#user-cp').text("Care Provider: " + userData.careProvider[0].display);
 		$('#user-phone').text("Phone Number: " + userData.telecom[0].value);
 		$('#user-gender').text("Gender: " + userData.gender[0].toUpperCase() + userData.gender.substring(1));
+
+
+
+
+
+var linedata = {
+    		labels: ["September", "October", "November", "December", "January", "February", "March"],
+    		datasets: [
+	        {
+	            label: "Stability Rating changes over the months",
+	            fill: false,
+	            lineTension: 0.1,
+	            backgroundColor: "rgba(75,192,192,0.4)",
+	            borderColor: "rgba(75,192,192,1)",
+	            borderCapStyle: 'butt',
+	            borderDash: [],
+	            borderDashOffset: 0.0,
+	            borderJoinStyle: 'miter',
+	            pointBorderColor: "rgba(75,192,192,1)",
+	            pointBackgroundColor: "#fff",
+	            pointBorderWidth: 1,
+	            pointHoverRadius: 5,
+	            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+	            pointHoverBorderColor: "rgba(220,220,220,1)",
+	            pointHoverBorderWidth: 2,
+	            pointRadius: 1,
+	            pointHitRadius: 10,
+	            data: [60, 75, 70, 73, 78, 85, 80],
+	            spanGaps: false,
+	        }
+	    	]
+		};
+		var linectx = document.getElementById("lineChart").getContext("2d");
+		var myLineChart = new Chart(linectx, {
+    		type: 'line',
+    		data: linedata,
+    		options: []
+		});
