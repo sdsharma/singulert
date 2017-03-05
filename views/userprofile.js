@@ -144,3 +144,11 @@
 
 		var ctx = document.getElementById("myChart").getContext("2d");
 		var myChart = new Chart(ctx, config);
+
+		var userData = JSON.parse(Cookies.get('userData'));
+		$('#user-name').text(userData.name[0].given[0]+" "+userData.name[0].family[0]);
+		$('#user-dob').text("DOB: " + userData.birthDate);
+		$('#user-address').text("Address: " + userData.address[0].line[0] + ", " + userData.address[0].city + ", " + userData.address[0].state);
+		$('#user-cp').text("Care Provider: " + userData.careProvider[0].display);
+		$('#user-phone').text("Phone Number: " + userData.telecom[0].value);
+		$('#user-gender').text("Gender: " + userData.gender[0].toUpperCase() + userData.gender.substring(1));

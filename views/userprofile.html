@@ -22,9 +22,12 @@
    <div class="col-md-3 logo-pane">
    	<img src="logo.jpg" class="logo" />
    	<img src="userimage.jpg" class="img-circle user-image" />
-   	<h2 class="user-info">NAME</h2>
-   	<h2 class="user-info">AGE</h2>
-   	<h2 class="user-info">ADDRESS</h2>
+   	<h2 class="user-info" id="user-name">NAME</h2>
+   	<h5 class="user-info" id="user-dob">AGE</h5>
+    <h5 class="user-info" id="user-gender">GENDER</h5>
+   	<h5 class="user-info" id="user-address">ADDRESS</h5>
+    <h5 class="user-info" id="user-cp">CARE PROVIDER</h5>
+    <h5 class="user-info" id="user-phone">PHONE NUMBER</h5>
    	<h3 class="welcome-text">WELCOME TO YOUR SINGULERT DASHBOARD!</h3>
    </div>
    <p id="stabilityText">Stability Rating</p>
@@ -218,6 +221,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script type="text/javascript" src="js.cookie.js"></script>
     <script type="text/javascript" src="userprofile.js"></script>
     
   </body>
