@@ -288,7 +288,7 @@ button {
 .error{
     position: fixed;
     z-index: 1;
-    top: 50vh;
+    top: 22vh;
     left: 5vw;
 }
 
