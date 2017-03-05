@@ -94,10 +94,10 @@ body{
   background:white;
 }
 .add .active{
- color:#75758a;
+ color:#7394b5;
 }
 .add > div:hover{
-  color:#75758a;
+  color:#7394b5;
 }
 .add{
   float:left;
@@ -165,8 +165,6 @@ body{
   top: 0;
   right: 0;
   height: 100vh;
- /* margin-top: -107px;
-  margin-left: 533px;*/
   box-shadow: 0px 2px 15px #ddd;
 
   }
@@ -248,6 +246,10 @@ body{
 
 
 
+@import url(http://fonts.googleapis.com/css?family=Oxygen:400,300);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+
 #screen {
   position: absolute;
   width: 23em;
@@ -261,15 +263,6 @@ input {
   visibility: hidden; /**/
 }
 
-#background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  -webkit-filter: blur(3px);
-  z-index: 0;
-}
 
 label {
   position: absolute;
@@ -296,8 +289,8 @@ label {
   position: relative;
   float: left;
   
-  height: 1.5em;
-  width: 1.5em;
+  height: 3em;
+  width: 3em;
   
   border-radius: 50%;
   
@@ -325,7 +318,7 @@ label {
   top: 0;
   
   width: 55%;  
-  margin: 1em 0 0 .75em;
+  margin: 1em 0 0 0em;
   
   -webkit-transition: top .5s;
 }
@@ -341,10 +334,11 @@ label {
 .name {
   font-size: 1.5em;
   font-weight: 300;
+  color:black;
 }
 .description {
   font-size: .9em;
-  color: rgba(255,255,255, .8);
+  color: rgba(0,0,0, .8);
 }
 
 .actions {
