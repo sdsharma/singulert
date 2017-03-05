@@ -22,7 +22,7 @@
 
 				ctx.save();
 				ctx.translate(arc.round.x, arc.round.y);
-				console.log(arc.round.startAngle)
+				
 				ctx.fillStyle = arc.round.backgroundColor;
 				ctx.beginPath();
 				ctx.arc(arc.round.radius * Math.sin(startAngle), arc.round.radius * Math.cos(startAngle), arc.round.thickness, 0, 2 * Math.PI);
