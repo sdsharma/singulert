@@ -25,6 +25,16 @@ body{
     bottom: 0;
     left: 6.5vw;
 }
+.signout{
+	margin-top: 280px;
+    margin-left: 8.0vw;
+    background-color: #56d2a3;
+    border-color: #2f7765;
+}
+.signout:hover{
+	background-color: #07cc9a;
+}
+
 
 .user-image{
 	text-align: center;

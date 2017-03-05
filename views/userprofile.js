@@ -190,3 +190,10 @@ var linedata = {
     		data: linedata,
     		options: []
 		});
+
+
+		$(".signout").click(function(){
+			  Cookies.remove('userName');
+			  Cookies.remove('userData');
+			  document.location.href = 'index.html';
+		});
