@@ -45,7 +45,7 @@ routes.push({
         handler: function (request, reply) {
             MongoClient.connect(dburl, function(err, db) {
                 var collection = db.collection('users');
-                collection.insert({username: request.payload.username, score: request.payload.password});
+                collection.insert({username: request.payload.username, password: request.payload.password});
                 db.createCollection(request.payload.username, function(err, collection){
                    if (err) throw err;
                     console.log("Created Collection: " + request.payload.username);
@@ -72,15 +72,16 @@ routes.push({
         handler: function (request, reply) {
             MongoClient.connect(dburl, function(err, db) {
             var collection = db.collection('users');
-            var userData = collection.findOne({username: request.payload.username});
-            if(request.payload.password == userData.password){
-                reply(true);
-            }
-            else{
-                reply(false);
-            }
-
+            collection.findOne({username: request.payload.username}).then(function(userData){
+                if(request.payload.password == userData.password){
+                    reply(true);
+                }
+                else{
+                    reply(false);
+                }
               db.close();
+            });
+            
             });
         },
         tags: ['api'],
