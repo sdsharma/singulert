@@ -9,49 +9,6 @@ var dburl = 'mongodb://localhost:27017/singulert';
 const API_BASE_PATH = '/api/alert';
 
 const routes = [];
-function currentDate(){
-    var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth()+1; 
-    var yyyy = today.getFullYear();
-    if(dd<10) {
-        dd='0'+dd;
-    } 
-
-    if(mm<10) {
-        mm='0'+mm;
-    } 
-    today = yyyy+'-'+mm+'-'+dd;
-    return today;
-}
-// GET /api/fit
-routes.push({
-    method: 'GET',
-    path: API_BASE_PATH,
-    config: {
-        auth: false,
-        handler: function (request, reply) {
-            MongoClient.connect(dburl, function(err, db) {
-              assert.equal(null, err);
-              reply("Connected successfully to server");
-              db.close();
-            });
-        },
-        tags: ['api']
-    }
-});
-
-routes.push({
-    method: 'GET',
-    path: API_BASE_PATH + '/authorize',
-    config: {
-        auth: false,
-        handler: function (request, reply) {
-            reply(true);
-        },
-        tags: ['api']
-    }
-});
 
 routes.push({
     method: 'POST',
@@ -163,6 +120,27 @@ routes.push({
         validate: {
             payload: {
               username: Joi.string().required()
+            }
+        }
+    }
+});
+
+routes.push({
+    method: 'GET',
+    path: API_BASE_PATH + '/userdata/{username}',
+    config: {
+        auth: false,
+        handler: function (request, reply) {
+            MongoClient.connect(dburl, function(err, db) {
+              var collection = db.collection('userdata');
+              var value = collection.findOne({username: request.params.username});
+              reply(value);
+            });
+        },
+        tags: ['api'],
+        validate: {
+            params: {
+                username: Joi.string().required()
             }
         }
     }
