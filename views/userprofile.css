@@ -42,7 +42,7 @@ body{
 	position: absolute;
 	top: 20vh;
 	left: 6.5vw;
-	border: 1px solid #fff;
+	border: 2px solid #fff;
 }
 
 .user-info{
@@ -54,12 +54,12 @@ body{
 }
 
 #myChart{
-	margin-left: 450px;
+	margin-left: 470px;
 }
 
 #stabilityText{
 	margin-top: 50px;
-    margin-left: 500px;
+    margin-left: 455px;
     font-size: 35px;
     font-weight: bold;
 }
@@ -412,36 +412,36 @@ label {
 
 #boxes{
 	margin-top: 350px;
-    margin-left: 400px;
+    margin-left: 410px;
 }
 #inside_box{
 	margin-left: 50px;
 }
 
 .panel-yellow {
-  border-color: #f0ad4e;
+  border-color: #56D2A3;
 }
 .panel-yellow > .panel-heading {
-  border-color: #f0ad4e;
+  border-color: #56D2A3;
   color: white;
-  background-color: #f0ad4e;
+  background-color: #56D2A3;
 }
 .panel-yellow > a {
-  color: #f0ad4e;
+  color: #56D2A3;
 }
 .panel-yellow > a:hover {
   color: #df8a13;
 }
 .panel-red {
-  border-color: #d9534f;
+  border-color: #282B30;
 }
 .panel-red > .panel-heading {
-  border-color: #d9534f;
+  border-color: #282B30;
   color: white;
-  background-color: #d9534f;
+  background-color: #282B30;
 }
 .panel-red > a {
-  color: #d9534f;
+  color: #282B30;
 }
 .panel-red > a:hover {
   color: #b52b27;

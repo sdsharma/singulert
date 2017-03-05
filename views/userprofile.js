@@ -101,7 +101,7 @@
 		type: 'doughnut',
 		data: {
 			labels: [
-				"Stability Ratings",
+				"Stability Rating",
 				"Missing"
 			],
 			datasets: [{
@@ -161,7 +161,7 @@ var linedata = {
     		labels: ["September", "October", "November", "December", "January", "February", "March"],
     		datasets: [
 	        {
-	            label: "Stability Rating changes over the months",
+	            label: "Stability Rating by Month",
 	            fill: false,
 	            lineTension: 0.1,
 	            backgroundColor: "rgba(75,192,192,0.4)",

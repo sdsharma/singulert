@@ -10,8 +10,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="userprofile.css">
-
-
     <!-- HTML5 Shim -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -33,7 +31,7 @@
 
     
    </div>
-   <p id="stabilityText">Stability Rating</p>
+   <p id="stabilityText">Current Stability Rating</p>
    <div class="col-md-3">
     <canvas id="myChart" width="100" height="100"></canvas>
    </div>
@@ -54,14 +52,6 @@
             <div class="details">
               <p class="name">Daniel Kim</p>
               <p class="description">Nurse</p>
-              <div class="actions">
-                <div class="envelope">
-                  <div class="paper"></div>
-                </div>
-                <div class="text">&#59168;</div>
-                <div class="call">&#128222;</div>
-                <div class="info"></div>
-              </div>
             </div>
             <label for="contact-1"></label>
           </div>
@@ -71,12 +61,6 @@
             <div class="details">
               <p class="name">Lingyi Wang</p>
               <p class="description">Doctor</p>
-              <div class="actions">
-                <div class="mail">&#9993;</div>
-                <div class="text">&#59168;</div>
-                <div class="call">&#128222;</div>
-                <div class="info"></div>
-              </div>
             </div>
             <label for="contact-10"></label>
           </div>
@@ -86,12 +70,6 @@
             <div class="details">
               <p class="name">Shivam Danaid</p>
               <p class="description">Son</p>
-              <div class="actions">
-                <div class="mail">&#9993;</div>
-                <div class="text">&#59168;</div>
-                <div class="call">&#128222;</div>
-                <div class="info"></div>
-              </div>
             </div>
             <label for="contact-2"></label>
           </div>
@@ -101,12 +79,6 @@
             <div class="details">
               <p class="name">Neila Danaid</p>
               <p class="description">Wife</p>
-              <div class="actions">
-                <div class="mail">&#9993;</div>
-                <div class="text">&#59168;</div>
-                <div class="call">&#128222;</div>
-                <div class="info"></div>
-              </div>
             </div>
             <label for="contact-3"></label>
           </div>
@@ -116,12 +88,6 @@
             <div class="details">
               <p class="name">Susan Jane</p>
               <p class="description">Daughter</p>
-              <div class="actions">
-                <div class="mail">&#9993;</div>
-                <div class="text">&#59168;</div>
-                <div class="call">&#128222;</div>
-                <div class="info"></div>
-              </div>
             </div>
             <label for="contact-9"></label>
           </div>
@@ -132,12 +98,6 @@
             <div class="details">
               <p class="name">Mike Ross</p>
               <p class="description">Close Friend</p>
-              <div class="actions">
-                <div class="mail">&#9993;</div>
-                <div class="text">&#59168;</div>
-                <div class="call">&#128222;</div>
-                <div class="info"></div>
-              </div>
             </div>
             <label for="contact-4"></label>
           </div>          
@@ -154,10 +114,10 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-hospital-o fa-5x"></i>
+                                    <i class="fa fa-user-md fa-5x"></i>
                                 </div>
                                 <div class="col-xs-3" id="inside_box">
-                                    <div class="huge">3</div>
+                                    <div class="huge">1</div>
                                     <div>Total Falls</div>
                                 </div>
                             </div>
@@ -171,10 +131,10 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-xs-3">
-                                    <i class="fa fa-phone fa-5x"></i>
+                                    <i class="fa fa-heartbeat fa-5x"></i>
                                 </div>
                                 <div class="col-xs-3" id="inside_box">
-                                    <div class="huge">1</div>
+                                    <div class="huge">3</div>
                                     <div>Close Calls</div>
                                 </div>
                             </div>
@@ -183,9 +143,9 @@
                     </div>
                 </div>
             </div>
-
+        <p id="stabilityText" style="margin-left: 485px;">Stability Over Time</p>
         <div class="col-md-6" id="line_Chart">
-          <canvas id="lineChart" width="400" height="400"></canvas>
+          <canvas id="lineChart" width="400" height="250"></canvas>
         </div>            
 
 
