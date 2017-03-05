@@ -100,9 +100,9 @@ body{
   color:#7394b5;
 }
 .add{
-  float:right;
-  margin:0 45px;
-  color:#07cc9a;
+  float:left;
+  margin:0 5px;
+  color:#282B30;
 }
 
 .userDetails h2{
@@ -160,10 +160,11 @@ body{
 .wrapper{
   background-color:#fcfcfc;
   display: flex;
-  width: 330px;
-  position: absolute;
-  margin-top: -107px;
-  margin-left: 606px;
+  width: 322px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
   box-shadow: 0px 2px 15px #ddd;
 
   }
@@ -192,7 +193,7 @@ body{
 }
 .content #searchBar{
   position:absolute;
-  left:130px;
+  left:105px;
   top:18px;
   border-radius:40px;
   color:#a9a9a9;
@@ -240,6 +241,7 @@ body{
 .contactList{
   margin-top:50px;
   margin-left:5px;
+
 }
 
 
@@ -302,8 +304,8 @@ label {
   top: -.3em;
   left: -.3em;
   
-  height: 3.5em;
-  width: 3.5em;
+  height: 2.5em;
+  width: 2.5em;
   
   border: 1px solid rgba(255,255,255, .5);
   border-radius: 50%;
@@ -316,7 +318,7 @@ label {
   top: 0;
   
   width: 55%;  
-  margin: 1em 0 0 .75em;
+  margin: 1em 0 0 0em;
   
   -webkit-transition: top .5s;
 }
@@ -380,8 +382,6 @@ label {
 .info:after {
   font-size: 1.7em;
   content: 'i';
-  font-family: Consolas !important;
-  
   color: #fff;
   -webkit-text-stroke-width: 0;
   
@@ -397,81 +397,4 @@ label {
 .item:hover > .portrait:after {
   border: 1px solid rgba(116,226,21, 1);
   box-shadow: 0 0 3px rgba(116,226,21, .5);
-}
-
-input:checked + .item {
-  background-color: rgba(7, 204, 154, .7); /**/
-  padding-top: 0px;
-  border-top: 1px solid rgba(255,255,255, .1);
-  border-bottom: 1px solid rgba(0,0,0, .5);
-}
-
-input:checked + .item > .details {
-  top: -6em;
-  z-index: 2;
-}
-
-/* Local Details */
-
-#chris-lacy {
-  background-image: url(https://lh3.googleusercontent.com/-_RbzbA4U-AY/T3le0hEjh5I/AAAAAAAAPbU/H6aRDFguJMY/s207-p-no/profile_pic.png);
-}
-#marq {
-  background-image: url(https://lh6.googleusercontent.com/-HM-tr3UEejY/UTkJfpIKB0I/AAAAAAAB4Qw/Auc20I2DW50/s207-p-no/PO8A0788.jpg);
-}
-#Neila {
-  background-image: url(https://lh4.googleusercontent.com/-gi7ff5iHmfc/AAAAAAAAAAI/AAAAAAAAAAA/SAt2FLwWnqQ/s170-c-k-no/photo.jpg);
-}
-#Tim {
-  background-image: url(https://lh3.googleusercontent.com/-aldjCkivfjM/UiLJGp9uWkI/AAAAAAACZI0/SzF8u1Sn9Yg/s374-no/2010inField.jpg);
-}
-#Ross {
-  background-image: url(https://lh5.googleusercontent.com/-ZldUgVhYK2I/Ui5w1xJB-GI/AAAAAAABhyw/CYqAw6qNpdU/s747-no/IMG_4199.JPG);
-}
-#Richard {
-  background-image: url(https://lh4.googleusercontent.com/-3hWBW1tTkIs/TrAVPskLAXI/AAAAAAABYxw/tkRaEDCAhPA/w576-h575-no/DSC_0993.jpg);
-}
-#George {
-  background-image: url(https://lh5.googleusercontent.com/-1euFoF6_C1c/T9oVScCtEMI/AAAAAAAAoEw/70Mk-gAXts4/w525-h528-no/GT+color3.jpg);
-}
-#Beaufort {
-  background-image: url(https://lh6.googleusercontent.com/-GnkJpy0jk60/Tqar4gGdvwI/AAAAAAAA-0w/8qaP8zAm31E/s747-no/P1030524.JPG);
-}
-#Ana {
-  background-image: url(https://lh4.googleusercontent.com/-1zxtaYRNh84/AAAAAAAAAAI/AAAAAAAAAAA/7kbNSX3kyZQ/s170-c-k-no/photo.jpg);
-}
-#Mara {
-  background-image: url(https://lh6.googleusercontent.com/-iJYfqnaDuxg/Uc-C9u0u70I/AAAAAAAB4wI/TTxYpcfPTW8/s747-no/DSC_5282.JPG);
-}
-
-/* Local Interactions */
-#contact-1:checked ~ #background {
-  background-image: url(https://lh3.googleusercontent.com/-_RbzbA4U-AY/T3le0hEjh5I/AAAAAAAAPbU/H6aRDFguJMY/s207-p-no/profile_pic.png);
-}
-#contact-2:checked ~ #background {
-  background-image: url(https://lh6.googleusercontent.com/-HM-tr3UEejY/UTkJfpIKB0I/AAAAAAAB4Qw/Auc20I2DW50/s207-p-no/PO8A0788.jpg);
-}
-#contact-3:checked ~ #background {
-  background-image: url(https://lh4.googleusercontent.com/-gi7ff5iHmfc/AAAAAAAAAAI/AAAAAAAAAAA/SAt2FLwWnqQ/s170-c-k-no/photo.jpg);
-}
-#contact-4:checked ~ #background {
-  background-image: url(https://lh3.googleusercontent.com/-aldjCkivfjM/UiLJGp9uWkI/AAAAAAACZI0/SzF8u1Sn9Yg/s374-no/2010inField.jpg);
-}
-#contact-5:checked ~ #background {
-  background-image: url(https://lh5.googleusercontent.com/-ZldUgVhYK2I/Ui5w1xJB-GI/AAAAAAABhyw/CYqAw6qNpdU/s747-no/IMG_4199.JPG);
-}
-#contact-6:checked ~ #background {
-  background-image: url(https://lh4.googleusercontent.com/-3hWBW1tTkIs/TrAVPskLAXI/AAAAAAABYxw/tkRaEDCAhPA/w576-h575-no/DSC_0993.jpg);
-}
-#contact-7:checked ~ #background {
-   background-image: url(https://lh5.googleusercontent.com/-1euFoF6_C1c/T9oVScCtEMI/AAAAAAAAoEw/70Mk-gAXts4/w525-h528-no/GT+color3.jpg);
-}
-#contact-8:checked ~ #background {
-   background-image: url(https://lh6.googleusercontent.com/-GnkJpy0jk60/Tqar4gGdvwI/AAAAAAAA-0w/8qaP8zAm31E/s747-no/P1030524.JPG);
-}
-#contact-9:checked ~ #background {
-  background-image: url(https://lh4.googleusercontent.com/-1zxtaYRNh84/AAAAAAAAAAI/AAAAAAAAAAA/7kbNSX3kyZQ/s170-c-k-no/photo.jpg);
-}
-#contact-10:checked ~ #background {
-  background-image: url(https://lh6.googleusercontent.com/-iJYfqnaDuxg/Uc-C9u0u70I/AAAAAAAB4wI/TTxYpcfPTW8/s747-no/DSC_5282.JPG);
 }
