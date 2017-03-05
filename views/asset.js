@@ -34,7 +34,14 @@ $(document).ready(function(){
 
 		      	}
 		      	else{
-		      		Cookies.set('userName', $("#unameField").val());		      		
+		      		Cookies.set('userName', $("#unameField").val());
+		      		$.ajax({
+		      			type: "GET",
+		      			url: 'http://localhost:3000/api/alert/userdata/' + Cookies.get('userName'),
+		      			success: function(userdata){
+		      				Cookies.set('userData', JSON.stringify(userdata));
+		      			} 
+		      		});		      		
 		      	}
 		      }
 		    });
