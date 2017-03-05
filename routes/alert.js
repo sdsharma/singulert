@@ -71,18 +71,25 @@ routes.push({
         auth: false,
         handler: function (request, reply) {
             MongoClient.connect(dburl, function(err, db) {
-            var collection = db.collection('users');
-            collection.findOne({username: request.payload.username}).then(function(userData){
-                if(request.payload.password == userData.password){
-                    reply(true);
-                }
-                else{
-                    reply(false);
-                }
-              db.close();
+                var collection = db.collection('users');
+                collection.findOne({username: request.payload.username}, function(err, userData){
+                    if (err) {
+                        reply(false);
+                    }
+                    if (userData == null) {
+                        reply(false);
+                    } else {
+                        if(request.payload.password == userData.password){
+                            reply(true);
+                        }
+                        else{
+                            reply(false);
+                        }
+                    }
+                });
+                db.close();
             });
-            
-            });
+
         },
         tags: ['api'],
         validate: {
