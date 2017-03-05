@@ -100,9 +100,9 @@ body{
   color:#75758a;
 }
 .add{
-  float:right;
+  float:left;
   margin:0 5px;
-  color:#7394b5;
+  color:#282B30;
 }
 
 .userDetails h2{
@@ -160,10 +160,13 @@ body{
 .wrapper{
   background-color:#fcfcfc;
   display: flex;
-  width: 405px;
-  position: absolute;
-  margin-top: -107px;
-  margin-left: 533px;
+  width: 322px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+ /* margin-top: -107px;
+  margin-left: 533px;*/
   box-shadow: 0px 2px 15px #ddd;
 
   }
@@ -192,7 +195,7 @@ body{
 }
 .content #searchBar{
   position:absolute;
-  left:130px;
+  left:105px;
   top:18px;
   border-radius:40px;
   color:#a9a9a9;
@@ -240,6 +243,7 @@ body{
 .contactList{
   margin-top:50px;
   margin-left:5px;
+
 }
 
 
@@ -307,8 +311,8 @@ label {
   top: -.3em;
   left: -.3em;
   
-  height: 3.5em;
-  width: 3.5em;
+  height: 2.5em;
+  width: 2.5em;
   
   border: 1px solid rgba(255,255,255, .5);
   border-radius: 50%;
@@ -384,8 +388,6 @@ label {
 .info:after {
   font-size: 1.7em;
   content: 'i';
-  font-family: Consolas !important;
-  
   color: #fff;
   -webkit-text-stroke-width: 0;
   
@@ -401,16 +403,4 @@ label {
 .item:hover > .portrait:after {
   border: 1px solid rgba(116,226,21, 1);
   box-shadow: 0 0 3px rgba(116,226,21, .5);
-}
-
-input:checked + .item {
-  background-color: rgba(0,0,0, .3); /**/
-  padding-top: 0px;
-  border-top: 1px solid rgba(255,255,255, .1);
-  border-bottom: 1px solid rgba(0,0,0, .5);
-}
-
-input:checked + .item > .details {
-  top: -6em;
-  z-index: 2;
 }
