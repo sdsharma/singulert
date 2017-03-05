@@ -18,12 +18,12 @@ body{
 
 .welcome-text{
 	color: #fff;
-	font-size: .8em;
+	font-size: .6em;
 	text-align: center;
 	font-style: italic;
 	position: absolute;
     bottom: 0;
-    left: 2.5vw;
+    left: 6.5vw;
 }
 
 .user-image{
